@@ -1,0 +1,352 @@
+<!doctype html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-it Note</title>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<script src="interact.js"></script>
+
+		
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#container
+	 {
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		align-content: center;
+		margin: auto;
+		width: 80%;
+	}
+	
+	input[type="text"]
+{
+    	background: transparent;
+    	border: none;
+		font-family: 'Indie Flower', cursive;
+		font-size: 20px;
+		text-align: center;
+		color: black;
+}
+	
+	input::placeholder {
+		color: black;
+		font-family: 'Indie Flower', cursive;
+		font-size: 35px;
+	}
+	
+	.tegnestift {
+		width: 15%;
+		height: 15%;
+		margin-left: -40px;
+	}
+	
+	
+	textarea {
+		background: transparent;
+		border: none;
+		width: 100%;
+		height: 80%;
+		font-family: 'Indie Flower', cursive;
+		font-size: 20px;
+		text-align: center;
+	}
+	textarea::placeholder {
+		font-family: 'Indie Flower', cursive;
+		color: black;
+		font-sie: 20px;
+		text-align: center;
+	}
+	
+	
+	
+	#postit1 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #FF4454, #FF3443);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-3deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+		cursor: move;
+	}
+	
+	#postit2 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #F8ec97, #f5e572);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(2deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	#postit3 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #63FF5B, #2BFF1E);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-5deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	#postit4 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #5E9EEB, #4573AA);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-5deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	#postit5 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #FFB076, #C5875A);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-5deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	#postit6 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #FFADF9, #B176AD);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-5deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	#postit7 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #FF4454, #FF3443);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-5deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+
+	#postit8 {
+		margin: 20px;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(132deg, #F8ec97, #f5e572);
+		padding: 15px;
+		border-bottom-right-radius: 190px 7px;
+		transform: rotate(-5deg);
+		box-shadow: 2px 3px 5px -4px black;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	#postit1:nth-child(2){
+		transform: rotate(1deg)
+	}
+	
+	#postit1:nth-child(3){
+		transform: rotate(3deg)
+	}
+	
+	#postit3:nth-child(4){
+		transform: rotate(-5deg)
+	}
+	
+	time {
+		float: right;
+		display: block;
+		clear: left;
+		width: 100%;
+		text-align: right;
+		margin-top: -60px;
+	}
+	
+	.sign {
+		font-size: 20px;
+		margin-top: -20px;
+	}
+	
+	.sign::placeholder {
+		font-size: 20px;
+		margin-top: 10px;
+	}
+	
+	
+	
+	/* MEDIA QUERY TIL MOBILE DEVICES */
+	
+	@media screen and (max-width: 600px) {
+    .tegnestift {
+        display: none;
+    }
+		
+	time {
+		margin-top: 5px;
+		}
+}
+	
+	/* MEDIA QUERY TIL TABLET DEVICES */
+	
+	@media screen and (max-width: 1024px) {
+    .tegnestift {
+        display: none;
+    }	
+		
+	time {
+		margin-top: 5px;
+		}
+}
+	/* MEDIA QUERY TIL LAPTOPS*/
+	@media screen and (max-width: 1440px) {
+	#postit7, #postit8 {
+		display: none;
+		}
+	}
+	
+	
+	</style>	
+	
+</head>
+
+<body>
+	<div id="container">
+	<div id="postit1" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea name="subject" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+		
+	</div>
+	
+	<div id="postit2" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea name="subject" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+	</div>
+	
+	<div id="postit3" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+		
+	</div>
+	
+	<div id="postit4" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+	</div>
+	
+	<div id="postit5" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+	</div>
+	
+	<div id="postit6" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+	</div>
+		
+	<div id="postit7" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+	</div>
+		
+	<div id="postit8" draggable="true">
+			<img class="tegnestift" src="tegnestift.png" alt="#">
+			<time>30/08/2018</time>
+			<input type="text" name="header" placeholder="Overskrift"><br><br>
+			<textarea placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eligendi saepe voluptas ipsam numquam autem commodi assumenda pariatur fuga deserunt." style="height:200px"></textarea>
+			<input class="sign" type="text" placeholder="Signatur">
+	</div>
+</div>	
+	
+<script>
+// target elements with the "draggable" class
+	
+// INTERAGERE SIG MED VORES POST IT'S //
+interact('#postit1, #postit2, #postit3, #postit4, #postit5, #postit6, #postit7, #postit8')
+	
+// GØR VORES POST IT'S "DRAGGABLE" //	
+  .draggable({
+		inertia: true,
+    	restrict: {
+		restriction: "parent",
+		endOnly: true,
+      	elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+    },
+	
+	
+// Hvergang vores post it's bliver trukket rundt, bruges denne funktion //
+    onmove: dragMoveListener,
+    onend: function (event) {
+      var textEl = event.target.querySelector('');
+      textEl && (textEl.textContent =
+        ''
+        + (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+                     Math.pow(event.pageY - event.y0, 2) | 0))
+            .toFixed(2) + 'px');
+    }
+  });
+
+// Funktion gør at vores post it's forbliver på den position hvor den er blevet sluppet //
+  function dragMoveListener (event) {
+    var target = event.target,
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    	target.style.webkitTransform =
+    	target.style.transform =
+		'translate(' + x + 'px, ' + y + 'px)';
+
+	  	target.setAttribute('data-x', x);
+    	target.setAttribute('data-y', y);
+  }
+
+
+
+</script>	
+	
+	
+
+	
+</body>
+</html>
